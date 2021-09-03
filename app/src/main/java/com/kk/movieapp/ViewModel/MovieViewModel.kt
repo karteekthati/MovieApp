@@ -35,6 +35,7 @@ private val repository: MovieDetailsRepository
         query.postValue(s)
     }
 
+    //changes for develop
     fun getMovieDetails(imdbId:String) = viewModelScope.launch {
         _movieDetails.postValue(Events(Result(Status.LOADING, null, null)))
         _movieDetails.postValue(Events(repository.getMovieDetails(imdbId)))
